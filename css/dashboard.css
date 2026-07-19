@@ -1,0 +1,193 @@
+/* ContentOS - Dashboard & Content Score Styles */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-6);
+}
+
+/* Content Score Highlight Card */
+.score-card {
+  grid-column: span 12;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.score-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: var(--gradient-subtle);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.score-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 520px;
+  z-index: 2;
+}
+
+/* Stat Cards Row */
+.stat-cards-container {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.metric-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-dim);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-family: var(--font-mono) !important;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.metric-subtext {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Charts Containers */
+.chart-card-large {
+  grid-column: span 8;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+}
+
+.chart-card-small {
+  grid-column: span 4;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart-bar {
+  transition: height 0.5s ease-out, y 0.5s ease-out, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  opacity: 0.85;
+}
+
+.chart-axis-line {
+  stroke: var(--hairline);
+  stroke-width: 1;
+}
+
+.chart-text {
+  fill: var(--text-dim);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* Donut Legend */
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+}
+
+.legend-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: var(--space-2);
+}
+
+/* Collapsible Accordion Card */
+.accordion-card {
+  grid-column: span 12;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-4) var(--space-6);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: var(--text-dim);
+}
+
+.accordion-trigger:hover {
+  color: var(--text);
+}
+
+.accordion-content {
+  padding-top: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--text-dim);
+  line-height: 1.6;
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .chart-card-large { grid-column: span 12; }
+  .chart-card-small { grid-column: span 12; }
+  .score-card { flex-direction: column; align-items: flex-start; }
+}

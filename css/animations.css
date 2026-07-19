@@ -1,0 +1,79 @@
+/* ContentOS - Animations & Reduced Motion */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    background-color: var(--card);
+  }
+  50% {
+    opacity: 1;
+    background-color: var(--card-hover);
+  }
+}
+
+@keyframes collapseOut {
+  0% {
+    opacity: 1;
+    max-height: 200px;
+    transform: scale(1);
+    margin-bottom: var(--space-4);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    transform: scale(0.95);
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.35s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+.animate-collapse-out {
+  animation: collapseOut 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+/* Staggered Animations */
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+
+/* Prefers Reduced Motion Guard */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentOS — Personal Workspace</title>
+  <meta name="description" content="Personal content strategy workspace for Instagram and YouTube creators." />
+
+  <!-- Google Fonts: Space Grotesk (headings), Inter (body), JetBrains Mono (numbers/stats) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <link rel="stylesheet" href="css/connect.css" />
+  <link rel="stylesheet" href="css/posts.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/ideas.css" />
+  <link rel="stylesheet" href="css/planner.css" />
+  <link rel="stylesheet" href="css/settings.css" />
+
+  <!-- Synchronous Inline Theme Initializer (Prevents FOUT / Flash of Wrong Theme) -->
+  <script>
+    (function () {
+      var theme = 'dark';
+      try {
+        var raw = localStorage.getItem('contentos:theme');
+        if (raw) theme = JSON.parse(raw);
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', theme);
+      if (document.body) document.body.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <!-- App Root Mount Point -->
+  <div id="app"></div>
+
+  <!-- JavaScript Modules Loaded in Strict Dependency Order -->
+
+  <!-- 1. Low-level Utilities -->
+  <script src="js/utils/storage.js"></script>
+  <script src="js/utils/dom.js"></script>
+  <script src="js/utils/validators.js"></script>
+
+  <!-- 2. Data & Domain Business Logic -->
+  <script src="js/data/phraseBanks.js"></script>
+  <script src="js/utils/postsStore.js"></script>
+  <script src="js/utils/plannerStore.js"></script>
+  <script src="js/utils/analytics.js"></script>
+  <script src="js/utils/ideaEngine.js"></script>
+  <script src="js/utils/theme.js"></script>
+  <script src="js/utils/dataTransfer.js"></script>
+
+  <!-- 3. UI Components -->
+  <script src="js/components/scoreRing.js"></script>
+  <script src="js/components/barChart.js"></script>
+  <script src="js/components/toast.js"></script>
+  <script src="js/components/emptyState.js"></script>
+  <script src="js/components/errorBanner.js"></script>
+  <script src="js/components/sidebar.js"></script>
+  <script src="js/components/topbar.js"></script>
+
+  <!-- 4. Page Views -->
+  <script src="js/pages/connect.js"></script>
+  <script src="js/pages/posts.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/ideas.js"></script>
+  <script src="js/pages/planner.js"></script>
+  <script src="js/pages/settings.js"></script>
+
+  <!-- 5. App Core Orchestrator & Boot -->
+  <script src="js/router.js"></script>
+  <script src="js/appShell.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

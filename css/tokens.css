@@ -1,0 +1,96 @@
+/* ContentOS - Design Tokens */
+:root {
+  /* Color Palette - Dark Theme Default */
+  --bg: #0A0A0B;
+  --surface: #131316;
+  --card: #1C1C21;
+  --card-2: #202027;
+  --card-hover: #262630;
+  --text: #F5F5F7;
+  --text-dim: #9B9BA6;
+  --text-muted: #6E6E7A;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.16);
+
+  /* Gradients & Accents */
+  --gradient-accent: linear-gradient(135deg, #8B5CF6, #EC4899);
+  --gradient-accent-hover: linear-gradient(135deg, #7C3AED, #DB2777);
+  --gradient-subtle: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(236, 72, 153, 0.06));
+  --accent-purple: #8B5CF6;
+  --accent-pink: #EC4899;
+  --accent-glow: rgba(139, 92, 246, 0.25);
+
+  /* Semantic Feedback */
+  --danger: #EF4444;
+  --danger-bg: rgba(239, 68, 68, 0.12);
+  --danger-hover: #DC2626;
+  --success: #10B981;
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --warning: #F59E0B;
+  --info: #3B82F6;
+
+  /* Typography Stack */
+  --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Typography Sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 2rem;     /* 32px */
+  --font-size-4xl: 2.5rem;   /* 40px */
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-card: 14px;
+  --radius-pill: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.25);
+
+  /* Spacing Scale (4px base unit) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Layout Dimensions */
+  --sidebar-width: 250px;
+  --topbar-height: 64px;
+  --bottom-nav-height: 60px;
+  --max-content-width: 1200px;
+}
+
+/* Light Theme Overrides (Applied via data-theme="light" on body) */
+body[data-theme="light"] {
+  --bg: #F8F9FC;
+  --surface: #FFFFFF;
+  --card: #F1F3F9;
+  --card-2: #E4E8F2;
+  --card-hover: #D8DDEB;
+  --text: #111115;
+  --text-dim: #676778;
+  --text-muted: #9595A5;
+  --hairline: rgba(0, 0, 0, 0.08);
+  --hairline-strong: rgba(0, 0, 0, 0.16);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.15);
+  --gradient-subtle: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.04));
+}

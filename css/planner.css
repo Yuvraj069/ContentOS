@@ -1,0 +1,123 @@
+/* ContentOS - Weekly Planner Grid Styles */
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.day-column {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-column.is-today {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.day-header {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+
+.day-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--text);
+}
+
+.day-column.is-today .day-name {
+  color: var(--accent-purple);
+}
+
+.day-body {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.planned-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.planned-card:hover {
+  border-color: var(--hairline-strong);
+}
+
+.planned-topic {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.planned-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1);
+}
+
+.planned-part {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.planner-empty-day {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-6) 0;
+  font-style: italic;
+}
+
+.add-plan-btn {
+  margin-top: auto;
+  padding: var(--space-2);
+  width: 100%;
+  font-size: var(--font-size-xs);
+  color: var(--text-dim);
+  border-top: 1px dashed var(--hairline);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+
+.add-plan-btn:hover {
+  color: var(--accent-purple);
+  background: var(--card-hover);
+}
+
+/* Responsive Stack (<768px) */
+@media (max-width: 768px) {
+  .planner-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .day-column {
+    min-height: auto;
+  }
+}

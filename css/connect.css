@@ -1,0 +1,126 @@
+/* ContentOS - Connect Profile Setup Styles */
+
+.connect-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--bg);
+}
+
+.connect-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+}
+
+.connect-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.connect-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--gradient-subtle);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--accent-purple);
+  margin-bottom: var(--space-4);
+}
+
+.connect-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.connect-subtitle {
+  color: var(--text-dim);
+  font-size: var(--font-size-sm);
+}
+
+/* Platform Toggle Pills */
+.platform-toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.platform-pill-btn {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  color: var(--text-dim);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: all 0.15s ease-out;
+}
+
+.platform-pill-btn.active {
+  background: var(--surface);
+  border-color: var(--accent-purple);
+  color: var(--text);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Fixed "@" Handle Prefix Input */
+.handle-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.handle-input-wrapper:focus-within {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.handle-prefix {
+  padding-left: var(--space-4);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: var(--font-size-md);
+  user-select: none;
+}
+
+.handle-input-wrapper .form-input {
+  border: none;
+  background: transparent;
+  padding-left: var(--space-1);
+  font-family: var(--font-mono);
+}
+
+.handle-input-wrapper .form-input:focus {
+  box-shadow: none;
+}
+
+.connect-privacy-note {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--hairline);
+}
