@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentOS — Dashboard</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- JS Modules -->
+  <script src="js/storage.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/postsStore.js"></script>
+  <script src="js/followersStore.js"></script>
+  <script src="js/recommendations.js"></script>
+  <script src="js/ideaEngine.js"></script>
+  <script src="js/indulgenceEngine.js"></script>
+  <script src="js/analyticsEngine.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.ContentOS && window.ContentOS.auth) {
+        var session = window.ContentOS.auth.requireAuth();
+        if (session && window.ContentOS.main) {
+          window.ContentOS.main.renderAppShell('dashboard', document.getElementById('app'));
+        }
+      }
+    });
+  </script>
+</body>
+</html>

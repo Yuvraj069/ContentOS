@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentOS — Creator Login</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-page">
+  <div id="app"></div>
+
+  <!-- JS Modules -->
+  <script src="js/storage.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.ContentOS && window.ContentOS.auth) {
+        window.ContentOS.auth.redirectIfAuthenticated();
+      }
+      if (window.ContentOS && window.ContentOS.main) {
+        window.ContentOS.main.renderLoginView(document.getElementById('app'));
+      }
+    });
+  </script>
+</body>
+</html>
